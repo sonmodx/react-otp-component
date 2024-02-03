@@ -1,8 +1,34 @@
-# React + Vite
+# OTP Component
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Tasks
 
-Currently, two official plugins are available:
+- Keep secret OTP in environment file.
+- Show value correctly (Must have only one number in each input OTP).
+- Move selection correctly when user enter input OTP.
+- Check is valid OTP?
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://github.com/sonmodx/react-otp-component.git
+```
+
+Go to the project directory
+
+```bash
+  cd react-otp-component
+```
+
+Install package
+
+```bash
+  npm i
+```
+
+Run project on your localhost
+
+```bash
+  npm run dev
+```
