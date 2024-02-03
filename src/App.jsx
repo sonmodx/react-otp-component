@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./App.css";
-import OTPForm from "./components/OtpForm";
+import OTPForm from "./components/OTPForm";
 
 function App() {
   const secretOTP = import.meta.env.VITE_SECRET_OTP;
