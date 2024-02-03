@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+:root {
+  --green-clr: #4DF500;
+  --red-clr: #F21328;
+}
+
 .app {
   font-family: 'Pixelify Sans', sans-serif;
   min-height: 100vh;
@@ -34,6 +39,26 @@ input, textarea {
 .app .container .phone-number {
   font-size: clamp(1rem, 1rem + 2vw, 2rem);
   color: grey;
+}
+
+.app .container .result {
+  font-size: clamp(.5rem, .5rem + 1vw, 1.25rem);
+}
+
+.app .container .result .success {
+  color: var(--green-clr);
+}
+
+.app .container .result .fail {
+  color: var(--red-clr);
+}
+
+.app .container:has(.success) header h1 {
+  color: var(--green-clr);
+}
+
+.app .container:has(.fail) header h1 {
+  color: var(--red-clr);
 }
 
 .shake {

@@ -1,9 +1,13 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./OTPForm.css";
 
-const OTPForm = ({ length, validOTP }) => {
+const OTPForm = ({ length, validOTP, setShowResult }) => {
   const [otp, setOtp] = useState(new Array(length).fill(""));
   const otpRefs = useRef([]);
+
+  useEffect(() => {
+    otpRefs.current[0].focus();
+  }, []);
 
   const handleChange = (e, index) => {
     const newOtp = [...otp];
@@ -17,7 +21,10 @@ const OTPForm = ({ length, validOTP }) => {
     //check success input
     const fullOTP = newOtp.join("");
     if (length === fullOTP.length) {
-      return validOTP(fullOTP);
+      otpRefs.current[index].blur();
+      setShowResult(true);
+      validOTP(fullOTP);
+      return;
     }
 
     //move forward
@@ -37,7 +44,9 @@ const OTPForm = ({ length, validOTP }) => {
 
   const handleKeydown = (e, index) => {
     //go backward ,if key is Backspace and index > 0 and have no value in current input
-    if (e.key === "Backspace" && index > 0 && !otp[index]) {
+    if (e.key !== "Backspace") return;
+    setShowResult(false);
+    if (index > 0 && !otp[index]) {
       otpRefs.current[index - 1].focus();
     }
   };
